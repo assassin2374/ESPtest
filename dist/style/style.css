@@ -1,0 +1,29 @@
+.content{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.esp-card{
+    display: inline-block;
+    width: 10%;
+}
+
+.select-card{
+    cursor: pointer;
+}
+
+.base-button{
+    display: block;
+    text-align: center;
+    width: 60%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 220, 60); 
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin: auto;
+    margin-top: 20px;
+}
