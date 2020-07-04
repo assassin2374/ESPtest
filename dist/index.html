@@ -4,32 +4,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lib/css/bootstrap.min.css">
   <link rel="stylesheet" href="style/style.css">
   <title>ESPtest</title>
 </head>
 
 <body>
-<div class="content">
-<div>
-<img src="images/cardback.jpg" class="esp-card">
-<img src="images/cardback.jpg" class="esp-card">
-<img src="images/cardback.jpg" class="esp-card">
-<img src="images/cardback.jpg" class="esp-card">
-<img src="images/cardback.jpg" class="esp-card">
-</div>
+  <div class="content">
+    <div>
+      <img src="images/cardback.jpg" class="esp-card">
+      <img src="images/cardback.jpg" class="esp-card">
+      <img src="images/cardback.jpg" class="esp-card">
+      <img src="images/cardback.jpg" class="esp-card">
+      <img src="images/cardback.jpg" class="esp-card">
+    </div>
 
-<div>
-<img id="card01" src="images/cardback.jpg" class="esp-card select-card">
-<img id="card02" src="images/cardback.jpg" class="esp-card select-card">
-<img id="card03" src="images/cardback.jpg" class="esp-card select-card">
-<img id="card04" src="images/cardback.jpg" class="esp-card select-card">
-<img id="card05" src="images/cardback.jpg" class="esp-card select-card">
-</div>
+    <div>
+      <img id="card01" src="images/cardback.jpg" class="esp-card select-card" data-toggle="modal"
+        data-target="#exampleModalCenter">
+      <img id="card02" src="images/cardback.jpg" class="esp-card select-card modal-open">
+      <img id="card03" src="images/cardback.jpg" class="esp-card select-card modal-open">
+      <img id="card04" src="images/cardback.jpg" class="esp-card select-card modal-open">
+      <img id="card05" src="images/cardback.jpg" class="esp-card select-card modal-open">
+    </div>
+    <!-- <div class="modal js-modal">
+      <div class="modal-bg modal-close"></div>
+      <div class="madal-content">
+        <img id="card01" src="images/cardback.jpg" class="esp-card select-card modal-close">
+        <img id="card02" src="images/cardback.jpg" class="esp-card select-card modal-close">
+        <img id="card03" src="images/cardback.jpg" class="esp-card select-card modal-close">
+        <img id="card04" src="images/cardback.jpg" class="esp-card select-card modal-close">
+        <img id="card05" src="images/cardback.jpg" class="esp-card select-card modal-close">
+      </div>
+    </div> -->
 
-<button class="base-button">自分の第6感を確認する</button>
-</div>
+    <button class="base-button">自分の第6感を確認する</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+            <!-- ☓ボタン -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- 本文 -->
+          <div class="modal-body">
+            <img id="card01" src="images/cardback.jpg" class="select-card" data-dismiss="modal">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="test-b" type="button" class="btn btn-primary" data-dismiss="modal">test</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <script src="index.js"></script>
+<script type="text/javascript" src="lib/js/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
 
 </html>

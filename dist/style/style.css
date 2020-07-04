@@ -34,3 +34,51 @@
     background-color: #8db0f1; /* 背景色をグレー（#c9c9c9）にする */
     text-decoration: none; /* リンクに出てくる下線を無効にする*/    
 }
+
+.modal{ 
+    /* モーダル全体の設定 */
+    display: none; /* 最初は非表示 */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal-bg{
+    /* モーダル表示の背景設定 */
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal-content{
+    /* モーダルで表示したい部分設定 */
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%); /* 中央に寄せる */
+    width: 60%;
+}
+
+/* .modal-window{
+    display: none;
+    width:50%;
+	margin:1.5em auto 0;
+	padding:10px 20px;
+	border:2px solid #aaa;
+	background:#fff;
+    z-index:2;
+    position: fixed;
+} */
+
+/* #modal-overlay{
+	z-index:1;
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:120%;
+    background-color:rgba(0,0,0,0.75);
+} */ 
