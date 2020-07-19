@@ -11,33 +11,13 @@
 
 <body>
   <div class="content">
-    <div>
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-    </div>
+    <!-- 見本カード -->
+    <div id="answer-card-area"></div>
 
-    <div>
-      <img id="card01" src="images/cardback.jpg" class="esp-card select-card" data-toggle="modal"
-        data-target="#exampleModalCenter">
-      <img id="card02" src="images/cardback.jpg" class="esp-card select-card modal-open">
-      <img id="card03" src="images/cardback.jpg" class="esp-card select-card modal-open">
-      <img id="card04" src="images/cardback.jpg" class="esp-card select-card modal-open">
-      <img id="card05" src="images/cardback.jpg" class="esp-card select-card modal-open">
-    </div>
-    <!-- <div class="modal js-modal">
-      <div class="modal-bg modal-close"></div>
-      <div class="madal-content">
-        <img id="card01" src="images/cardback.jpg" class="esp-card select-card modal-close">
-        <img id="card02" src="images/cardback.jpg" class="esp-card select-card modal-close">
-        <img id="card03" src="images/cardback.jpg" class="esp-card select-card modal-close">
-        <img id="card04" src="images/cardback.jpg" class="esp-card select-card modal-close">
-        <img id="card05" src="images/cardback.jpg" class="esp-card select-card modal-close">
-      </div>
-    </div> -->
+    <!-- 選択カード -->
+    <div id="select-card-area"></div>
 
+    <!-- 確認ボタン -->
     <button class="base-button">自分の第6感を確認する</button>
 
     <!-- Modal -->
@@ -46,20 +26,14 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">ESPカード選択</h5>
             <!-- ☓ボタン -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <!-- 本文 -->
-          <div class="modal-body">
-            <img id="card01" src="images/cardback.jpg" class="select-card" data-dismiss="modal">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button id="test-b" type="button" class="btn btn-primary" data-dismiss="modal">test</button>
-          </div>
+          <!-- カード選択 -->
+          <div id="modal-select" class="modal-body"></div>
         </div>
       </div>
     </div>

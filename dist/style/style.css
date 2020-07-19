@@ -6,7 +6,13 @@
 
 .esp-card{
     display: inline-block;
-    width: 10%;
+    width: 100px;
+    height: auto;
+}
+
+.esp-card-s{
+    display: inline-block;
+    width: 15%;
 }
 
 .select-card{
@@ -58,7 +64,7 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%,-50%); /* 中央に寄せる */
-    width: 60%;
+    width: 100%;
 }
 
 /* .modal-window{
