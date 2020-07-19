@@ -3,95 +3,85 @@ import { Card } from "./Card";
 export class CardSelect {
 
     // 選択したカード
-    // card01: HTMLImageElement | null;
-    // card02: HTMLImageElement | null;
-    // card03: HTMLImageElement | null;
-    // card04: HTMLImageElement | null;
-    // card05: HTMLImageElement | null;
-    // モーダル時のカード
-    espo: HTMLImageElement | null;
-    espt: HTMLImageElement | null;
-    espw: HTMLImageElement | null;
-    espc: HTMLImageElement | null;
-    esps: HTMLImageElement | null;
+    answerCardArea: HTMLElement | null;
     selectCardArea: HTMLElement | null;
+    modalSelect: HTMLElement | null;
+    cardPosition: string;
 
     constructor() {
-        // this.card01 = <HTMLImageElement>document.getElementById('card01')
-        // this.card02 = <HTMLImageElement>document.getElementById('card02')
-        // this.card03 = <HTMLImageElement>document.getElementById('card03')
-        // this.card04 = <HTMLImageElement>document.getElementById('card04')
-        // this.card05 = <HTMLImageElement>document.getElementById('card05')
-        this.espo = <HTMLImageElement>document.getElementById('espo')
-        this.espt = <HTMLImageElement>document.getElementById('espt')
-        this.espw = <HTMLImageElement>document.getElementById('espw')
-        this.espc = <HTMLImageElement>document.getElementById('espc')
-        this.esps = <HTMLImageElement>document.getElementById('esps')
+        this.answerCardArea = document.getElementById('answer-card-area')
         this.selectCardArea = document.getElementById('select-card-area')
-
-
-        // this.card01?.addEventListener("click", () => {
-        //     // alert(`unkotinko`)
-        // })
-        // this.card02?.addEventListener("click", () => {
-        //     // alert(`unkotinko`)
-        // })
-        // this.card03?.addEventListener("click", () => {
-        //     // alert(`unkotinko`)
-        // })
-        // this.card04?.addEventListener("click", () => {
-        //     // alert(`unkotinko`)
-        // })
-        // this.card05?.addEventListener("click", () => {
-        //     // alert(`unkotinko`)
-        // })
-
-        this.espo?.addEventListener("click", () => {
-            alert(`unkotinko`)
-            this.test()
-        })
-        this.espt?.addEventListener("click", () => {
-            // alert(`unkotinko`)
-        })
-        this.espw?.addEventListener("click", () => {
-            // alert(`unkotinko`)
-        })
-        this.espc?.addEventListener("click", () => {
-            // alert(`unkotinko`)
-        })
-        this.esps?.addEventListener("click", () => {
-            // alert(`unkotinko`)
-        })
+        this.modalSelect = document.getElementById('modal-select')
+        this.cardPosition = ""
     }
 
     public loadCard() {
         var card = new Card(0, "")
 
-        var cards = card.createCardBacks()
-        console.log(cards)
+        var answerCards = card.createCardBacks()
 
-        // cardの中身の数だけ繰り返す
-        for (const card of cards) {
+        // answercardの中身の数だけ繰り返す
+        for (const card of answerCards) {
+            // カードの枚数だけイメージ追加
+            this.answerCardArea?.insertAdjacentHTML('beforeend',
+                `<img id="answer-card${card.position}"
+                 src="${card.imagePath}"
+                 class="esp-card">\n`)
+        }
+
+        // セレクト形成
+        this.creatSelect()
+
+        // モーダル形成
+        this.creatModal()
+    }
+
+    // セレクト形成
+    private creatSelect() {
+        var card = new Card(0, "")
+        var selectCards = card.createCardBacks()
+
+        // selectcardの中身の数だけ繰り返す
+        for (const card of selectCards) {
             // カードの枚数だけイメージ追加
             this.selectCardArea?.insertAdjacentHTML('beforeend',
-                `<img id="${card.position}"
+                `<img id="select-card${card.position}"
                  src="${card.imagePath}"
                  class="esp-card select-card"
                  data-toggle="modal"
                  data-target="#exampleModalCenter">\n`)
+            var esp = <HTMLImageElement>document.getElementById(`select-card${card.position}`)
+            esp?.addEventListener("click", () => {
+                this.cardPosition = `select-card${card.position}`
+            })
         }
     }
 
-    public test() {
-        var cards: Card[] = []
+    // モーダル形成
+    private creatModal() {
         var card = new Card(0, "")
+        var modalSelect = card.createSerectCards()
 
-        var hoge = card.createSerectCards()
-        console.log(hoge)
+        // espcardの中身の数だけ繰り返す
+        for (const card of modalSelect) {
+            // カードの枚数だけイメージ追加
+            this.modalSelect?.insertAdjacentHTML('beforeend',
+                `<img id="esp${card.position}"
+                 src="${card.imagePath}"
+                 class="esp-card-s select-card rounded"
+                 data-dismiss="modal">\n`)
 
-        // cardの中身の数だけ繰り返す
-        for (const card of cards) {
-            // createCards()
+            var esp = <HTMLImageElement>document.getElementById(`esp${card.position}`)
+            esp?.addEventListener("click", () => {
+                var img = <HTMLImageElement>document.getElementById(this.cardPosition)
+                if (img == null) return
+                img.src = `${card.imagePath}`
+                this.cardPosition = ""
+            })
         }
+    }
+
+    private cardClick(esp: HTMLImageElement, card: Card) {
+
     }
 }

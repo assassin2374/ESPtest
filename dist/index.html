@@ -12,13 +12,7 @@
 <body>
   <div class="content">
     <!-- 見本カード -->
-    <div>
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-      <img src="images/cardback.jpg" class="esp-card">
-    </div>
+    <div id="answer-card-area"></div>
 
     <!-- 選択カード -->
     <div id="select-card-area"></div>
@@ -39,17 +33,7 @@
             </button>
           </div>
           <!-- カード選択 -->
-          <div class="modal-body">
-            <img id="espo" src="images/espo.jpeg" class="esp-card-s select-card rounded" data-dismiss="modal">
-            <img id="espt" src="images/espt.jpeg" class="esp-card-s select-card" data-dismiss="modal">
-            <img id="espw" src="images/espw.jpeg" class="esp-card-s select-card" data-dismiss="modal">
-            <img id="espc" src="images/espc.jpeg" class="esp-card-s select-card" data-dismiss="modal">
-            <img id="esps" src="images/esps.jpeg" class="esp-card-s select-card" data-dismiss="modal">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button id="test-b" type="button" class="btn btn-primary" data-dismiss="modal">test</button>
-          </div>
+          <div id="modal-select" class="modal-body"></div>
         </div>
       </div>
     </div>
