@@ -1,9 +1,9 @@
 export class Card {
 
-    position: Number;
-    imagePath: String;
+    position: number;
+    imagePath: string;
 
-    constructor(position: Number, imagePath: String) {
+    constructor(position: number, imagePath: string) {
         this.position = position
         this.imagePath = imagePath
     }

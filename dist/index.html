@@ -18,7 +18,8 @@
     <div id="select-card-area"></div>
 
     <!-- 確認ボタン -->
-    <button class="base-button">自分の第6感を確認する</button>
+    <button id="answer-button" class="base-button" data-toggle="modal"
+      data-target="#exampleModalAnswer">自分の第6感を確認する</button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -37,6 +38,25 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal Answer -->
+    <div class="modal fade" id="exampleModalAnswer" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      role="dialog" aria-labelledby="exampleModalAnswerTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalAnswerTitle">ESPテスト結果</h5>
+            <!-- resetボタン -->
+            <button id="reset-button" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">リセット</span>
+            </button>
+          </div>
+          <!-- カード選択 -->
+          <div id="modal-answer" class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 
